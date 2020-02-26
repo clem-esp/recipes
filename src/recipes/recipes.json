@@ -1,0 +1,44 @@
+[
+    {
+        "id": "1",
+        "slug": "",
+        "title": "Recette 1",
+        "image": "1.png",
+        "ingredients": [
+          {
+            "title":"Farine",
+            "type":"1",
+            "quantity":"500",
+            "unite":"g"
+          },
+          {
+            "title":"Sucre",
+            "type":"1",
+            "quantity":"1",
+            "unite":"kg"
+          }
+          ],
+        "texte": "Texte"
+    },
+    {
+        "id": "2",
+        "slug": "",
+        "title": "Recette 2",
+        "image": "1.png",
+        "ingredients":[
+          {
+            "title":"Farine",
+            "type":"1",
+            "quantity":"500",
+            "unite":"g"
+          },
+          {
+            "title":"Sucre",
+            "type":"1",
+            "quantity":"1",
+            "unite":"kg"
+          }
+          ],
+        "texte": "Texte"
+    }
+]
