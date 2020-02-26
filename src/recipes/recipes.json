@@ -4,16 +4,17 @@
         "slug": "",
         "title": "Recette 1",
         "image": "1.png",
+        "tags" : ["vegetarien", "vegetalien", "sans lactose"],
         "ingredients": [
           {
             "title":"Farine",
-            "type":"1",
+            "type":"2",
             "quantity":"500",
             "unite":"g"
           },
           {
             "title":"Sucre",
-            "type":"1",
+            "type":"2",
             "quantity":"1",
             "unite":"kg"
           }
@@ -25,18 +26,19 @@
         "slug": "",
         "title": "Recette 2",
         "image": "1.png",
+        "tags" : ["vegetarien", "sans gluten", "sans lactose"],
         "ingredients":[
           {
-            "title":"Farine",
+            "title":"Courgettes",
             "type":"1",
-            "quantity":"500",
-            "unite":"g"
+            "quantity":"5",
+            "unite":""
           },
           {
-            "title":"Sucre",
-            "type":"1",
-            "quantity":"1",
-            "unite":"kg"
+            "title":"Oeufs",
+            "type":"3",
+            "quantity":"3",
+            "unite":""
           }
           ],
         "texte": "Texte"
