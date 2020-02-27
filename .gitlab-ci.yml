@@ -1,4 +1,9 @@
-image: ubuntu:18.04
+image: image: node:6.9.4
+
+cache:
+  paths:
+  - node_modules/
+  - .yarn
 
 before_script:
   - apt-get update -qy
@@ -6,5 +11,9 @@ before_script:
 
 build:
   script:
+    - yarn global add node-gyp
+    - yarn config set cache-folder .yarn
+    - yarn install
+    - yarn build
     # Sync to FTP
     - lftp -e "open ftp.clemenceesposito.fr; user $FTP_USERNAME $FTP_PASSWORD; mirror -X .* -X .*/ --reverse --verbose --delete build/ recettes/; bye"
