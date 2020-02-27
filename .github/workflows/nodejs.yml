@@ -14,7 +14,7 @@ jobs:
     #   matrix:
     #     node-version: [8.x, 10.x, 12.x]
 
-    script:
+    steps:
     # - uses: actions/checkout@v2
     # - name: Use Node.js ${{ matrix.node-version }}
     #   uses: actions/setup-node@v1
@@ -22,7 +22,7 @@ jobs:
     #     node-version: ${{ matrix.node-version }}
     - run: npm install
     - run: npm run build --if-present
-    - lftp -e "open ftp.clemenceesposito.fr; user $FTP_USERNAME $FTP_PASSWORD; mirror -X .* -X .*/ --reverse --verbose --delete build/ recettes/; bye"
+    - run: lftp -e "open ftp.clemenceesposito.fr; user $FTP_USERNAME $FTP_PASSWORD; mirror -X .* -X .*/ --reverse --verbose --delete build/ recettes/; bye"
     # - run: npm test
       env:
         CI: true
