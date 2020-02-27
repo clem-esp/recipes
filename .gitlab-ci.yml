@@ -12,7 +12,7 @@ before_script:
 build:
   script:
     - yarn config set cache-folder .yarn
-    - yarn install
+    - yarn install --pure-lockfile --cache-folder .yarn
     - yarn build
     # Sync to FTP
     - lftp -e "open ftp.clemenceesposito.fr; user $FTP_USERNAME $FTP_PASSWORD; mirror -X .* -X .*/ --reverse --verbose --delete build/ recettes/; bye"
