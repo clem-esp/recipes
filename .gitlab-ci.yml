@@ -1,4 +1,4 @@
-image: node:6.10.0
+image: node:9.4.0
 
 cache:
   paths:
@@ -11,7 +11,6 @@ before_script:
 
 build:
   script:
-    - yarn global add node-gyp
     - yarn config set cache-folder .yarn
     - yarn install
     - yarn build
