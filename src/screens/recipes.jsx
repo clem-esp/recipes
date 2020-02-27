@@ -1,12 +1,10 @@
 import React, {Component} from "react";
 import recipes from "../recipes/recipes.json";
+import Card from "../components/card";
 
 const recipes_list = recipes.map((data) => {
   return (
-    <div>
-      <h3>{data.title}</h3>
-      <p>{data.txt}</p>
-    </div>
+    <Card data={data}/>
   )
 })
 
@@ -17,8 +15,6 @@ export default class Recipes extends Component {
         <h2>Recettes</h2>
         {recipes_list}
       </div>
-
     )
   }
-
 }
