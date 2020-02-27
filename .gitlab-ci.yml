@@ -7,5 +7,4 @@ before_script:
 build:
   script:
     # Sync to FTP
-    - yarn build
     - lftp -e "open ftp.clemenceesposito.fr; user $FTP_USERNAME $FTP_PASSWORD; mirror -X .* -X .*/ --reverse --verbose --delete build/ recettes/; bye"
