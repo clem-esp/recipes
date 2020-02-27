@@ -1,39 +1,10 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import Recipes from "./screens/recipes"
-import Home from "./screens/home"
-
 export default function App() {
   return (
-    <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Accueil</Link>
-            </li>
-            <li>
-              <Link to="/recettes">Recettes</Link>
-            </li>
-          </ul>
-        </nav>
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/recettes">
-            <Recipes />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    <div class="container">
+      <h1>Site en cours de construction !</h1>
+      <p>Revenez plus tard !</p>
+      <img src="https://vignette.wikia.nocookie.net/animalcrossing/images/2/26/Isabelle_AF.png/revision/latest?cb=20160616164615&path-prefix=fr" alt="Marie d'Animal Crossing"></img>
+    </div>
   );
 }
