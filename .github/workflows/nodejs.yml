@@ -2,23 +2,27 @@ name: Node.js CI
 
 on: [push]
 
+before_script:
+    - apt-get update -qy
+    - apt-get install -y lftp
+
 jobs:
   build:
-
     runs-on: ubuntu-latest
+    #
+    # strategy:
+    #   matrix:
+    #     node-version: [8.x, 10.x, 12.x]
 
-    strategy:
-      matrix:
-        node-version: [8.x, 10.x, 12.x]
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
+    script:
+    # - uses: actions/checkout@v2
+    # - name: Use Node.js ${{ matrix.node-version }}
+    #   uses: actions/setup-node@v1
+    #   with:
+    #     node-version: ${{ matrix.node-version }}
     - run: npm install
     - run: npm run build --if-present
-    - run: npm test
+    - lftp -e "open ftp.clemenceesposito.fr; user $FTP_USERNAME $FTP_PASSWORD; mirror -X .* -X .*/ --reverse --verbose --delete build/ recettes/; bye"
+    # - run: npm test
       env:
         CI: true
